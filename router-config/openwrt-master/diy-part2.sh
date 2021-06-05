@@ -30,8 +30,8 @@ sed -i "1i sed -i 's/ifname/device/g' /etc/config/network" package/base-files/fi
 # ------------------------------- Lienol started -------------------------------
 #
 # Add branches package from Lienol/openwrt/branches/21.02/package and Remove duplicate packages
-svn co https://github.com/Lienol/openwrt/branches/21.02/package/{lean,default-settings} package
-rm -rf package/lean/{luci-app-frpc,luci-app-frps,libtorrent-rasterbar} 2>/dev/null
+#svn co https://github.com/Lienol/openwrt/branches/21.02/package/{lean,default-settings} package
+#rm -rf package/lean/{luci-app-frpc,luci-app-frps,libtorrent-rasterbar} 2>/dev/null
 
 # Add firewall rules
 zzz_iptables_row=$(sed -n '/iptables/=' package/default-settings/files/zzz-default-settings | head -n 1)
@@ -70,34 +70,34 @@ sed -i 's/TARGET_rockchip/TARGET_rockchip\|\|TARGET_armvirt/g' package/lean/auto
 # ------------------------------- Other started -------------------------------
 #
 # Add luci-app-passwall
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk package/openwrt-passwall
-rm -rf package/openwrt-passwall/{kcptun,xray-core} 2>/dev/null
+#svn co https://github.com/xiaorouji/openwrt-passwall/trunk package/openwrt-passwall
+#rm -rf package/openwrt-passwall/{kcptun,xray-core} 2>/dev/null
 
 # Add luci-app-openclash
-svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/openwrt-openclash
-pushd package/openwrt-openclash/tools/po2lmo && make && sudo make install 2>/dev/null && popd
+#svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/openwrt-openclash
+#pushd package/openwrt-openclash/tools/po2lmo && make && sudo make install 2>/dev/null && popd
 
 # Add luci-app-ssr-plus
-svn co https://github.com/fw876/helloworld/trunk/{luci-app-ssr-plus,shadowsocksr-libev} package/openwrt-ssrplus
-rm -rf package/openwrt-ssrplus/luci-app-ssr-plus/po/zh_Hans 2>/dev/null
+#svn co https://github.com/fw876/helloworld/trunk/{luci-app-ssr-plus,shadowsocksr-libev} package/openwrt-ssrplus
+#rm -rf package/openwrt-ssrplus/luci-app-ssr-plus/po/zh_Hans 2>/dev/null
 
 # Add luci-app-rclone
 # svn co https://github.com/ElonH/Rclone-OpenWrt/trunk package/openWrt-rclone
 
 # Add luci-app-diskman
-svn co https://github.com/lisaac/luci-app-diskman/trunk/applications/luci-app-diskman package/openwrt-diskman/luci-app-diskman
-wget https://raw.githubusercontent.com/lisaac/luci-app-diskman/master/Parted.Makefile -q -P package/openwrt-diskman/parted
-pushd package/openwrt-diskman/parted && mv -f Parted.Makefile Makefile 2>/dev/null && popd
+#svn co https://github.com/lisaac/luci-app-diskman/trunk/applications/luci-app-diskman package/openwrt-diskman/luci-app-diskman
+#wget https://raw.githubusercontent.com/lisaac/luci-app-diskman/master/Parted.Makefile -q -P package/openwrt-diskman/parted
+#pushd package/openwrt-diskman/parted && mv -f Parted.Makefile Makefile 2>/dev/null && popd
 
 # Add luci-app-amlogic
 svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/luci-app-amlogic
 
 # Add luci-app-bypass
-svn co https://github.com/garypang13/luci-app-bypass/trunk package/luci-app-bypass
-svn co https://github.com/garypang13/smartdns-le/trunk package/smartdns-le
+#svn co https://github.com/garypang13/luci-app-bypass/trunk package/luci-app-bypass
+#svn co https://github.com/garypang13/smartdns-le/trunk package/smartdns-le
 
-svn co https://github.com/jerrykuku/luci-app-vssr/trunk package/luci-app-vssr
-svn co https://github.com/garypang13/openwrt-packages/tree/master/lua-maxminddb/trunk package/lua-maxminddb
+#svn co https://github.com/jerrykuku/luci-app-vssr/trunk package/luci-app-vssr
+#svn co https://github.com/garypang13/openwrt-packages/tree/master/lua-maxminddb/trunk package/lua-maxminddb
 # Apply patch
 # git apply ../router-config/patches/{0001*,0002*}.patch --directory=feeds/luci
 #
