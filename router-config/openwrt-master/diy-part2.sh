@@ -82,7 +82,7 @@ svn co https://github.com/fw876/helloworld/trunk/{luci-app-ssr-plus,shadowsocksr
 rm -rf package/openwrt-ssrplus/luci-app-ssr-plus/po/zh_Hans 2>/dev/null
 
 # Add luci-app-rclone
-svn co https://github.com/ElonH/Rclone-OpenWrt/trunk package/openWrt-rclone
+# svn co https://github.com/ElonH/Rclone-OpenWrt/trunk package/openWrt-rclone
 
 # Add luci-app-diskman
 svn co https://github.com/lisaac/luci-app-diskman/trunk/applications/luci-app-diskman package/openwrt-diskman/luci-app-diskman
@@ -97,7 +97,7 @@ svn co https://github.com/garypang13/luci-app-bypass/trunk package/luci-app-bypa
 svn co https://github.com/garypang13/smartdns-le/trunk package/smartdns-le
 
 svn co https://github.com/jerrykuku/luci-app-vssr/trunk package/luci-app-vssr
-
+svn co https://github.com/garypang13/openwrt-packages/tree/master/lua-maxminddb/trunk package/lua-maxminddb
 # Apply patch
 # git apply ../router-config/patches/{0001*,0002*}.patch --directory=feeds/luci
 #
